@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    
+    <FontFamily x:Key="Verdana">Fonts/#verdana</FontFamily>
+    <FontFamily x:Key="Times New Roman">Fonts/#times</FontFamily>
+    <FontFamily x:Key="Arial">Fonts/#arial</FontFamily>
+
+    <FontWeight x:Key="14"></FontWeight>
+    <FontWeight x:Key="18"></FontWeight>
+    <FontWeight x:Key="22"></FontWeight>
+    
+</ResourceDictionary>
