@@ -26,9 +26,28 @@ namespace WpfApp6
         public MainWindow()
     {
         InitializeComponent();
+            List<string> styles = new List<string>() { "Светлая тема", "Темная тема" };
+            ThemeSwitch.ItemsSource = styles;
+            ThemeSwitch.SelectedItem = 0;
+            ThemeSwitch.SelectionChanged += ThemeSwitch_SelectionChanged;
     }
 
-    private void FontName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ThemeSwitch_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int themeindex = ThemeSwitch.SelectedIndex;
+            Uri uri = new Uri("WhiteTheme.xaml", UriKind.Relative);
+            if (themeindex == 1)
+            {
+                uri = new Uri("DarkTheme.xaml", UriKind.Relative);
+            }
+            ResourceDictionary resource = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resource);
+        }
+
+        
+
+        private void FontName_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         string fontname = ((sender as ComboBox).SelectedItem as TextBlock).Text;
 
